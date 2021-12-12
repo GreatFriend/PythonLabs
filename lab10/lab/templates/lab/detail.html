@@ -1,0 +1,11 @@
+Citizen
+{% if citizens%}
+<ul>
+        Name: {{ citizens.name }}<br> Age: {{ citizens.age }} <br> Place of Reg: {{citizens.place_reg }} <br> ---
+<a href="{% url 'lab:remove' citizens.id %}">Remove </a> <br>---
+<a href="{% url 'lab:update' citizens.id %}">Update </a> 
+</ul>
+{% else %}
+    <p>No Citizens are available.</p>
+{% endif %}
+<a href="{% url 'lab:index'%}">Back</a>

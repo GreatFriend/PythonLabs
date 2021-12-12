@@ -1,0 +1,13 @@
+Citizens 
+{% if citizens%}
+    <ul>
+    {% for c in citizens %}
+        <li><a href="{% url 'lab:detail' c.id %}">Name: {{ c.name }} </a> ---
+<a href="{% url 'lab:remove' c.id %}">Remove </a> ---
+<a href="{% url 'lab:update' c.id %}">Update </a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Citizens are available.</p>
+{% endif %}
+<a href="{% url 'lab:add'%}">Add</a>

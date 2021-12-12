@@ -1,0 +1,9 @@
+{% if citizen%}
+<form action="{% url 'lab:update' citizen.id %}" method="post">
+        {% csrf_token %}
+	<table>
+        {{form}}
+        </table>
+<input type="submit" value="Update"/>
+<a href="{% url 'lab:index'%}">Back</a>
+{% endif %}
